@@ -26,8 +26,6 @@ export default function Catagories() {
           <motion.li
             whileHover={{
               scale: 1.1,
-              backgroundColor: "greenyellow",
-              color: "white",
             }}
             whileTap={{ scale: 0.9 }}
             className={
@@ -39,7 +37,7 @@ export default function Catagories() {
             }}
             // style={
             //   itemsType === "cake"
-            //     ? { color: "white", backgroundColor: myTheme }
+            //     ? {  backgroundColor: myTheme }
             //     : { color: myTheme, backgroundColor: "white" }
             // }
           >
@@ -50,7 +48,7 @@ export default function Catagories() {
             />
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.1, backgroundColor: "greenyellow" }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className={
               "list-group-item text-center " +
@@ -61,7 +59,7 @@ export default function Catagories() {
             }}
             // style={
             //   itemsType === "fruit"
-            //     ? { color: "white", backgroundColor: myTheme }
+            //     ? {  backgroundColor: myTheme }
             //     : { color: myTheme, backgroundColor: "white" }
             // }
           >
@@ -74,8 +72,6 @@ export default function Catagories() {
           <motion.li
             whileHover={{
               scale: 1.1,
-              backgroundColor: "greenyellow",
-              color: "white",
             }}
             whileTap={{ scale: 0.9 }}
             className={
@@ -87,7 +83,7 @@ export default function Catagories() {
             }}
             // style={
             //   itemsType === "snack"
-            //     ? { color: "white", backgroundColor: myTheme }
+            //     ? {  backgroundColor: myTheme }
             //     : { color: myTheme, backgroundColor: "white" }
             // }
           >
@@ -100,8 +96,6 @@ export default function Catagories() {
           <motion.li
             whileHover={{
               scale: 1.1,
-              backgroundColor: "greenyellow",
-              color: "white",
             }}
             whileTap={{ scale: 0.9 }}
             className={
@@ -113,7 +107,7 @@ export default function Catagories() {
             }}
             // style={
             //   itemsType === "cake"
-            //     ? { color: "white", backgroundColor: myTheme }
+            //     ? {  backgroundColor: myTheme }
             //     : { color: myTheme, backgroundColor: "white" }
             // }
           >
@@ -126,8 +120,6 @@ export default function Catagories() {
           <motion.li
             whileHover={{
               scale: 1.1,
-              backgroundColor: "greenyellow",
-              color: "white",
             }}
             whileTap={{ scale: 0.9 }}
             className={
@@ -139,7 +131,7 @@ export default function Catagories() {
             }}
             // style={
             //   itemsType === "hat"
-            //     ? { color: "white", backgroundColor: myTheme }
+            //     ? {  backgroundColor: myTheme }
             //     : { color: myTheme, backgroundColor: "white" }
             // }
           >
@@ -152,8 +144,6 @@ export default function Catagories() {
           <motion.li
             whileHover={{
               scale: 1.1,
-              backgroundColor: "greenyellow",
-              color: "white",
             }}
             whileTap={{ scale: 0.9 }}
             className={
@@ -165,7 +155,7 @@ export default function Catagories() {
             }}
             // style={
             //   itemsType === "pizza"
-            //     ? { color: "white", backgroundColor: myTheme }
+            //     ? {  backgroundColor: myTheme }
             //     : { color: myTheme, backgroundColor: "white" }
             // }
           >
@@ -178,8 +168,6 @@ export default function Catagories() {
           <motion.li
             whileHover={{
               scale: 1.1,
-              backgroundColor: "greenyellow",
-              color: "white",
             }}
             whileTap={{ scale: 0.9 }}
             className={
@@ -191,7 +179,7 @@ export default function Catagories() {
             }}
             // style={
             //   itemsType === "beverage"
-            //     ? { color: "white", backgroundColor: myTheme }
+            //     ? {  backgroundColor: myTheme }
             //     : { color: myTheme, backgroundColor: "white" }
             // }
           >

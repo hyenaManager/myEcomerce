@@ -20,12 +20,15 @@ export default function Items() {
   const [addWithoutLogin, setAddWithoutLogin] = useState(false);
   const [filterText, setFilterText] = useState("");
   const allCartss = useSelector((state) => state.cart.value);
-  const selectedItemCatagory = useSelector((state) => state.itemType.value);
   const myTheme = useContext(ThemeContext);
   const [filteredImages, setFilteredImages] = useState(myDatas);
   function handleIsLogin(boolean) {
     setAddWithoutLogin(boolean);
   }
+  // const getItems = async () => {
+  //   const items = await axios.get("http://localhost:8000/items");
+  //   return items.data;
+  // };
   function handleSearch() {
     setFilteredImages((filteredImages) =>
       filteredImages.filter((data) =>
@@ -34,48 +37,16 @@ export default function Items() {
     );
   }
 
-  // function shouldHiddenOrAll(type) {
-  //   //hiding the item in the coditions of the catagory type
-  //   if (cataType === "all") {
-  //     return true;
-  //   } else {
-  //     return type === cataType; //e.g cataType === fruits, show only the item that type is fruit
-  //   }
-  // }
-
   const imgItems = filteredImages.map((data, index) => {
-    if (selectedItemCatagory === "all") {
-      return (
-        <Images
-          imgData={data}
-          key={index}
-          handleIsLogin={handleIsLogin}
-          placeholderSrc={"/src/svgs/loadingAnimated.gif"}
-        />
-      );
-    } else {
-      if (selectedItemCatagory === data.type) {
-        return (
-          <Images
-            imgData={data}
-            key={index}
-            handleIsLogin={handleIsLogin}
-            placeholderSrc={"/src/svgs/loadingAnimated.gif"}
-          />
-        );
-      }
-    }
+    return (
+      <Images
+        imgData={data}
+        key={index}
+        handleIsLogin={handleIsLogin}
+        placeholderSrc={"/loadingAnimated.gif"}
+      />
+    );
   });
-  // useEffect(() => {
-  //   if (selectedItemCatagory === "all") {
-  //     setFilteredImages(myDatas);
-  //   } else {
-  //     setFilteredImages(
-  //       myDatas.filter((data) => data.type === selectedItemCatagory)
-  //     );
-  //   }
-  // }, [selectedItemCatagory]);
-  console.log(selectedItemCatagory);
   return (
     <div className="itemContainer rounded">
       <div
@@ -133,7 +104,7 @@ function Images({ imgData, handleIsLogin, placeholderSrc }) {
   const allCarts = useSelector((state) => state.cart.value);
   const [imgSrc, setImgSrc] = useState(placeholderSrc || imgData.source);
   const alreadyInCart = allCarts.find((cart) => cart.id === imgData.id);
-
+  const selectedItemCatagory = useSelector((state) => state.itemType.value);
   const customClass =
     placeholderSrc && imgSrc === placeholderSrc ? "loading" : "loaded";
   function userExist() {
@@ -180,13 +151,19 @@ function Images({ imgData, handleIsLogin, placeholderSrc }) {
   return (
     <>
       <div
-        className={" col-4 image-container position-relative p-2 "}
+        className={
+          " col-4 image-container position-relative p-2 " +
+          (selectedItemCatagory !== "all" &&
+            selectedItemCatagory !== imgData.type &&
+            "d-none")
+        }
         key={imgData.name}
       >
         <section className=" cartImageMain position-relative">
           <motion.img
             src={imgSrc}
             alt={imgData.source}
+            loading="lazy"
             className={
               " rounded image-fluid cartImageSection " + `${customClass}`
             }

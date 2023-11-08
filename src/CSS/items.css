@@ -3,8 +3,8 @@
 }
 
 .cartImageSection {
-  objectfit: cover;
-  objectposition: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -18,6 +18,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.cartImageMain {
+  min-height: 320px;
 }
 .fanLogo {
   top: 50%;
@@ -37,16 +40,11 @@
 }
 
 @media screen and (max-width: 480px) {
-  /* .cartingFunction {
-    font-size: 13px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-  } */
   .cartingFunction {
     display: none;
+  }
+  .cartImageMain {
+    min-height: 100%;
   }
   .rounded-circle {
     font-size: 10px;
@@ -56,14 +54,14 @@
     overflow: auto;
   }
   .cartImageSection {
-    objectfit: cover;
-    objectposition: center;
+    object-fit: cover;
+    object-position: center;
     height: 100px;
     width: 100px;
   }
   .image-container img {
-    objectfit: cover;
-    objectposition: center;
+    object-fit: cover;
+    object-position: center;
     width: 70px;
   }
   /* section .sectionImage {
